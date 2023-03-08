@@ -6,6 +6,12 @@ let _ = 42 * 10
 
 let _ = 3.13 /. 2.0
 
+(** [pow b p] computes [b] raises to the [p] *)
+let rec pow b p = 
+  match p with 
+  | 0 -> 1
+  | _ -> b * pow b (p-1)
+
 (** [f_pow b p] computes the power of [b] to [p] *)
 let rec f_pow b p = 
   match p with 

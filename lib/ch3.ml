@@ -1,3 +1,8 @@
+let rec from i j l = if i > j then l else from i (j - 1) (j :: l)
+
+(** [i -- j] is the list containing the integers from [i] to [j], inclusive. *)
+let ( -- ) i j = from i j []
+
 let rec product = function
   | [] -> 1
   | h :: t -> h * product t
@@ -55,7 +60,7 @@ let rec drop n list =
     | [] -> []
     | _ :: t -> drop (n-1) t
 
-    (* skipping some exercises *)
+(* skipping some exercises *)
 
 (* we are given this type *)
 type student = { first_name : string ; last_name : string ; gpa : float }
@@ -79,7 +84,6 @@ type pokemon = { name: string; hp: int; ptype: poketype}
 let charizard = { name="Charizard"; hp=78; ptype=Fire }
 
 let squirtle = {name="Squirtle"; hp=44; ptype=Water}
-
 
 let safe_hd = function
   | [] -> None
